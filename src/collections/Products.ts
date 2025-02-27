@@ -44,15 +44,6 @@ export const Products: CollectionConfig = {
       },
     },
     {
-      name: 'big_image',
-      type: 'upload',
-      relationTo: 'media',
-      label: 'Big cover',
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
       name: 'price',
       type: 'number',
       label: 'Price',
@@ -76,22 +67,15 @@ export const Products: CollectionConfig = {
       },
     },
     {
+      name: 'excerpt',
+      type: 'textarea',
+      label: 'Excerpt',
+      required: true,
+    },
+    {
       name: 'content',
       type: 'richText',
       label: 'Content',
-    },
-    {
-      name: 'gallery',
-      type: 'array',
-      label: 'Image Gallery',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          label: 'Gallery Image',
-        },
-      ],
     },
     {
       name: 'files',

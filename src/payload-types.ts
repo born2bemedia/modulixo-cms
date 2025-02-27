@@ -121,23 +121,8 @@ export interface Category {
   id: number;
   title: string;
   slug?: string | null;
-  icon?: (number | null) | Media;
-  image?: (number | null) | Media;
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  subtitle: string;
+  description: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -150,10 +135,10 @@ export interface Product {
   title: string;
   slug?: string | null;
   image?: (number | null) | Media;
-  big_image?: (number | null) | Media;
   price?: number | null;
   category?: (number | null) | Category;
   preview?: (number | null) | Media;
+  excerpt: string;
   content?: {
     root: {
       type: string;
@@ -169,12 +154,6 @@ export interface Product {
     };
     [k: string]: unknown;
   } | null;
-  gallery?:
-    | {
-        image?: (number | null) | Media;
-        id?: string | null;
-      }[]
-    | null;
   files?:
     | {
         file?: (number | null) | Media;
@@ -405,9 +384,8 @@ export interface MediaSelect<T extends boolean = true> {
 export interface CategoriesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  icon?: T;
-  image?: T;
-  content?: T;
+  subtitle?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -419,17 +397,11 @@ export interface ProductsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   image?: T;
-  big_image?: T;
   price?: T;
   category?: T;
   preview?: T;
+  excerpt?: T;
   content?: T;
-  gallery?:
-    | T
-    | {
-        image?: T;
-        id?: T;
-      };
   files?:
     | T
     | {

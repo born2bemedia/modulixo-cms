@@ -70,7 +70,7 @@ export const Ideas: CollectionConfig = {
     afterChange: [
       async ({ doc }) => {
         try {
-          const response = await fetch('https://3dellium.com/api/revalidate', {
+          const response = await fetch('https://modulixo.com/api/revalidate', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -121,8 +121,8 @@ export interface Category {
   id: number;
   title: string;
   slug?: string | null;
-  subtitle: string;
-  description: string;
+  subtitle?: string | null;
+  description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -139,6 +139,8 @@ export interface Product {
   category?: (number | null) | Category;
   preview?: (number | null) | Media;
   excerpt: string;
+  duration?: string | null;
+  besfor?: string | null;
   content?: {
     root: {
       type: string;
@@ -401,6 +403,8 @@ export interface ProductsSelect<T extends boolean = true> {
   category?: T;
   preview?: T;
   excerpt?: T;
+  duration?: T;
+  besfor?: T;
   content?: T;
   files?:
     | T

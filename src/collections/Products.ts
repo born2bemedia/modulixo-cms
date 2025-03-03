@@ -73,6 +73,16 @@ export const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'duration',
+      type: 'text',
+      label: 'Duration',
+    },
+    {
+      name: 'besfor',
+      type: 'text',
+      label: 'Best For',
+    },
+    {
       name: 'content',
       type: 'richText',
       label: 'Content',

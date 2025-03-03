@@ -38,13 +38,13 @@ export const Categories: CollectionConfig = {
       name: 'subtitle',
       type: 'text',
       label: 'Category Subtitle',
-      required: true,
+      required: false,
     },
     {
       name: 'description',
       type: 'textarea',
       label: 'Category Description',
-      required: true,
+      required: false,
     },
   ],
 }

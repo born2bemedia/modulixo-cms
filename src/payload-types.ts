@@ -178,7 +178,7 @@ export interface Product {
  */
 export interface Order {
   id: number;
-  orderNumber: string;
+  orderNumber?: string | null;
   user?: (number | null) | User;
   items?:
     | {

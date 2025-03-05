@@ -17,7 +17,6 @@ export const Orders: CollectionConfig = {
       name: 'orderNumber',
       type: 'text',
       label: 'Order Number',
-      required: true,
       unique: true,
     },
     {
@@ -112,8 +111,21 @@ export const Orders: CollectionConfig = {
   ],
   hooks: {
     beforeChange: [
-      ({ data, req }) => {
-        console.log('Incoming data:', data) // Logs the incoming payload
+      async ({ data, operation, req }) => {
+        if (operation === 'create') {
+          const result = await req.payload.find({
+            collection: 'orders',
+            limit: 1,
+            sort: '-createdAt',
+          })
+
+          const lastOrderNumber = result.docs.length
+            ? parseInt((result.docs[0].orderNumber ?? 'ORD-100').replace('ORD-', ''), 10)
+            : 100
+
+          data.orderNumber = `ORD-${lastOrderNumber + 1}`
+        }
+        return data
       },
     ],
   },

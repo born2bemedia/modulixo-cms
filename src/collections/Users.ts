@@ -44,15 +44,15 @@ export const Users: CollectionConfig = {
       required: false,
     },
     {
-      name: 'street',
+      name: 'address1',
       type: 'text',
-      label: 'Street',
+      label: 'Address line 1',
       required: false,
     },
     {
-      name: 'address',
+      name: 'address2',
       type: 'textarea',
-      label: 'Address',
+      label: 'Address line 2',
       required: false,
     },
     {

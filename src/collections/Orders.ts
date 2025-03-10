@@ -83,7 +83,8 @@ export const Orders: CollectionConfig = {
       name: 'billingAddress',
       type: 'group',
       fields: [
-        { name: 'street', type: 'text', required: false },
+        { name: 'address1', type: 'text', required: false },
+        { name: 'address2', type: 'text', required: false },
         { name: 'city', type: 'text', required: false },
         { name: 'state', type: 'text', required: false },
         { name: 'zip', type: 'text', required: false },

@@ -76,8 +76,8 @@ export interface User {
   firstName: string;
   lastName: string;
   phone?: string | null;
-  street?: string | null;
-  address?: string | null;
+  address1?: string | null;
+  address2?: string | null;
   city?: string | null;
   state?: string | null;
   zip?: string | null;
@@ -193,7 +193,8 @@ export interface Order {
   paymentMethod?: string | null;
   orderNotes?: string | null;
   billingAddress?: {
-    street?: string | null;
+    address1?: string | null;
+    address2?: string | null;
     city?: string | null;
     state?: string | null;
     zip?: string | null;
@@ -344,8 +345,8 @@ export interface UsersSelect<T extends boolean = true> {
   firstName?: T;
   lastName?: T;
   phone?: T;
-  street?: T;
-  address?: T;
+  address1?: T;
+  address2?: T;
   city?: T;
   state?: T;
   zip?: T;
@@ -444,7 +445,8 @@ export interface OrdersSelect<T extends boolean = true> {
   billingAddress?:
     | T
     | {
-        street?: T;
+        address1?: T;
+        address2?: T;
         city?: T;
         state?: T;
         zip?: T;

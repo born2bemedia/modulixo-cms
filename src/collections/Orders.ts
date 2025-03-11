@@ -157,7 +157,7 @@ export const Orders: CollectionConfig = {
 
           const fileDoc = await req.payload.findByID({
             collection: 'media',
-            id: doc.file,
+            id: doc.files,
           })
           const fileUrl = fileDoc?.url || '#'
 
@@ -184,7 +184,7 @@ export const Orders: CollectionConfig = {
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: normal;">Dear ${name},</p>
+                line-height: normal;">Dear customer,</p>
                 <p style="color: #808080;
                 font-size: 16px;
                 font-style: normal;
@@ -200,7 +200,7 @@ export const Orders: CollectionConfig = {
                 margin: 40px 0 20px 0;">
                     Download Your Files Here:
                 </h3>
-                <a href="${fileUrl}" style="color: #0C0B0E;
+                <a href="https://cms.modulixo.com${fileUrl}" style="color: #0C0B0E;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 500;

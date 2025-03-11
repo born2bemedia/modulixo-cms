@@ -110,7 +110,7 @@ export const Orders: CollectionConfig = {
       },
     },
     {
-      name: 'file',
+      name: 'files',
       type: 'upload',
       relationTo: 'media',
       label: 'Files',
@@ -142,7 +142,7 @@ export const Orders: CollectionConfig = {
     afterChange: [
       async ({ doc, req }) => {
         console.log('doc', doc)
-        if (doc.status === 'completed' && doc.file) {
+        if (doc.status === 'completed' && doc.files) {
           let recipientEmail: string | undefined
           if (doc.user) {
             const user = await req.payload.findByID({

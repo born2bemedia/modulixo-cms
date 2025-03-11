@@ -202,7 +202,7 @@ export interface Order {
   };
   createdAt: string;
   invoice?: (number | null) | Media;
-  file?: (number | null) | Media;
+  files?: (number | null) | Media;
   updatedAt: string;
 }
 /**
@@ -455,7 +455,7 @@ export interface OrdersSelect<T extends boolean = true> {
       };
   createdAt?: T;
   invoice?: T;
-  file?: T;
+  files?: T;
   updatedAt?: T;
 }
 /**

@@ -139,6 +139,7 @@ export interface Product {
   category?: (number | null) | Category;
   preview?: (number | null) | Media;
   excerpt: string;
+  specs?: string | null;
   duration?: string | null;
   besfor?: string | null;
   content?: {
@@ -405,6 +406,7 @@ export interface ProductsSelect<T extends boolean = true> {
   category?: T;
   preview?: T;
   excerpt?: T;
+  specs?: T;
   duration?: T;
   besfor?: T;
   content?: T;

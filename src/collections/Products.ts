@@ -73,6 +73,11 @@ export const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: 'specs',
+      type: 'text',
+      label: 'Print Specs',
+    },
+    {
       name: 'duration',
       type: 'text',
       label: 'Duration',

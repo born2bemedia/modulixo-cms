@@ -49,6 +49,11 @@ export const Ideas: CollectionConfig = {
       label: 'Excerpt',
     },
     {
+      name: 'excerpt_home',
+      type: 'text',
+      label: 'Excerpt for Home Page',
+    },
+    {
       name: 'content',
       type: 'richText',
       label: 'Content',

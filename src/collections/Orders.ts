@@ -48,6 +48,11 @@ export const Orders: CollectionConfig = {
           required: false,
         },
         {
+          name: 'file_name',
+          type: 'text',
+          required: false,
+        },
+        {
           name: 'file_url',
           type: 'text',
           required: false,

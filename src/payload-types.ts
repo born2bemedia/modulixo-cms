@@ -186,6 +186,7 @@ export interface Order {
         product?: (number | null) | Product;
         quantity?: number | null;
         price?: number | null;
+        file_name?: string | null;
         file_url?: string | null;
         id?: string | null;
       }[]
@@ -441,6 +442,7 @@ export interface OrdersSelect<T extends boolean = true> {
         product?: T;
         quantity?: T;
         price?: T;
+        file_name?: T;
         file_url?: T;
         id?: T;
       };

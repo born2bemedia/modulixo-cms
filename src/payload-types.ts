@@ -123,6 +123,8 @@ export interface Category {
   slug?: string | null;
   subtitle?: string | null;
   description?: string | null;
+  seo_title?: string | null;
+  seo_description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -394,6 +396,8 @@ export interface CategoriesSelect<T extends boolean = true> {
   slug?: T;
   subtitle?: T;
   description?: T;
+  seo_title?: T;
+  seo_description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

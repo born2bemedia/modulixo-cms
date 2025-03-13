@@ -46,5 +46,17 @@ export const Categories: CollectionConfig = {
       label: 'Category Description',
       required: false,
     },
+    {
+      name: 'seo_title',
+      type: 'text',
+      label: 'SEO Title',
+      required: false,
+    },
+    {
+      name: 'seo_description',
+      type: 'text',
+      label: 'SEO Description',
+      required: false,
+    },
   ],
 }

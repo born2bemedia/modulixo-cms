@@ -183,9 +183,10 @@ export interface Order {
   user?: (number | null) | User;
   items?:
     | {
-        product: number | Product;
-        quantity: number;
-        price: number;
+        product?: (number | null) | Product;
+        quantity?: number | null;
+        price?: number | null;
+        file_url?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -440,6 +441,7 @@ export interface OrdersSelect<T extends boolean = true> {
         product?: T;
         quantity?: T;
         price?: T;
+        file_url?: T;
         id?: T;
       };
   total?: T;

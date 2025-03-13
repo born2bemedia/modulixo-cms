@@ -175,7 +175,6 @@ export const Orders: CollectionConfig = {
               (item: { file_url?: string; file_name?: string }) => `
                 <a href="${item.file_url}" 
                   style="color: #0C0B0E;
-                          width:100%;
                          font-size: 16px;
                          font-style: normal;
                          font-weight: 500;

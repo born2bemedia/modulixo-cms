@@ -53,6 +53,10 @@ export default buildConfig({
     },
   }),
   sharp,
+  localization: {
+    locales: ['en', 'pl', 'de', 'it'], // required
+    defaultLocale: 'en', // required
+  },
   plugins: [
     vercelBlobStorage({
       enabled: true, // Optional, defaults to true
@@ -66,7 +70,7 @@ export default buildConfig({
   ],
   email: nodemailerAdapter({
     defaultFromName: 'Modulixo',
-    defaultFromAddress: 'noreply@3dellium.com',
+    defaultFromAddress: 'noreply@modulixo.com',
     transportOptions: {
       service: 'gmail',
       auth: {

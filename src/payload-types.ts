@@ -279,7 +279,7 @@ export interface SpecialOffer {
   slug?: string | null;
   totalPrice?: number | null;
   discount?: number | null;
-  discountedPrice?: number | null;
+  price?: number | null;
   subtitle?: string | null;
   excerpt?: string | null;
   products?: (number | Product)[] | null;
@@ -530,7 +530,7 @@ export interface SpecialOffersSelect<T extends boolean = true> {
   slug?: T;
   totalPrice?: T;
   discount?: T;
-  discountedPrice?: T;
+  price?: T;
   subtitle?: T;
   excerpt?: T;
   products?: T;

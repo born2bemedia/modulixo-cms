@@ -283,6 +283,8 @@ export interface SpecialOffer {
   subtitle?: string | null;
   excerpt?: string | null;
   products?: (number | Product)[] | null;
+  image?: (number | null) | Media;
+  color?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -532,6 +534,8 @@ export interface SpecialOffersSelect<T extends boolean = true> {
   subtitle?: T;
   excerpt?: T;
   products?: T;
+  image?: T;
+  color?: T;
   updatedAt?: T;
   createdAt?: T;
 }

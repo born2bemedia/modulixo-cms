@@ -66,6 +66,23 @@ export const SpecialOffers: CollectionConfig = {
       label: 'Products',
       hasMany: true,
     },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Small cover',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'color',
+      type: 'text',
+      label: 'Color',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
   hooks: {
     afterChange: [

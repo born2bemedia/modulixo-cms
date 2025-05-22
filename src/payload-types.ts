@@ -277,9 +277,9 @@ export interface SpecialOffer {
   id: number;
   title: string;
   slug?: string | null;
-  'total-price'?: number | null;
+  totalPrice?: number | null;
   discount?: number | null;
-  'discounted-price'?: number | null;
+  discountedPrice?: number | null;
   subtitle?: string | null;
   excerpt?: string | null;
   products?: (number | Product)[] | null;
@@ -526,9 +526,9 @@ export interface PoliciesSelect<T extends boolean = true> {
 export interface SpecialOffersSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  'total-price'?: T;
+  totalPrice?: T;
   discount?: T;
-  'discounted-price'?: T;
+  discountedPrice?: T;
   subtitle?: T;
   excerpt?: T;
   products?: T;

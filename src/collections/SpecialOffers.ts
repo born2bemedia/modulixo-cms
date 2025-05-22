@@ -35,7 +35,7 @@ export const SpecialOffers: CollectionConfig = {
       },
     },
     {
-      name: 'total-price',
+      name: 'totalPrice',
       type: 'number',
       label: 'Total Price',
     },
@@ -45,7 +45,7 @@ export const SpecialOffers: CollectionConfig = {
       label: 'Discount',
     },
     {
-      name: 'discounted-price',
+      name: 'discountedPrice',
       type: 'number',
       label: 'Price with Discount:',
     },

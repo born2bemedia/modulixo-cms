@@ -17,6 +17,7 @@ import { Ideas } from './collections/Ideas'
 import { google } from 'googleapis'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { Policies } from './collections/Policies'
+import { SpecialOffers } from './collections/SpecialOffers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -38,7 +39,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Categories, Products, Orders, Ideas, Policies],
+  collections: [Users, Media, Categories, Products, Orders, Ideas, Policies, SpecialOffers],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

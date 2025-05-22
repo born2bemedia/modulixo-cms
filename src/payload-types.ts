@@ -18,6 +18,7 @@ export interface Config {
     orders: Order;
     ideas: Idea;
     policies: Policy;
+    'special-offers': SpecialOffer;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -31,6 +32,7 @@ export interface Config {
     orders: OrdersSelect<false> | OrdersSelect<true>;
     ideas: IdeasSelect<false> | IdeasSelect<true>;
     policies: PoliciesSelect<false> | PoliciesSelect<true>;
+    'special-offers': SpecialOffersSelect<false> | SpecialOffersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -269,6 +271,23 @@ export interface Policy {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "special-offers".
+ */
+export interface SpecialOffer {
+  id: number;
+  title: string;
+  slug?: string | null;
+  'total-price'?: number | null;
+  discount?: number | null;
+  'discounted-price'?: number | null;
+  subtitle?: string | null;
+  excerpt?: string | null;
+  products?: (number | Product)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -301,6 +320,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'policies';
         value: number | Policy;
+      } | null)
+    | ({
+        relationTo: 'special-offers';
+        value: number | SpecialOffer;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -493,6 +516,22 @@ export interface PoliciesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "special-offers_select".
+ */
+export interface SpecialOffersSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  'total-price'?: T;
+  discount?: T;
+  'discounted-price'?: T;
+  subtitle?: T;
+  excerpt?: T;
+  products?: T;
   updatedAt?: T;
   createdAt?: T;
 }
